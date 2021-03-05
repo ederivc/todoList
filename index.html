@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Todo List</title>
+</head>
+<body>
+    
+    <h1 class="title">Todo List</h1>
+
+    <form class="form">
+        <label for="name">Task name</label><input type="text" id="name">
+        <label for="description">Task description</label><input type="text" id="description">
+        <label for="date">Due date</label><input type="date" required id="date">
+        <img src="images/bx-save.svg" class="submit">
+    </form>
+
+    <ul class="todo-list">
+        <template class="template-list">
+            <li class="list">
+                <div class="element">
+                    <b class="item-title">Task name: </b><span class="name"></span>
+                </div>
+                <div class="element">
+                    <b class="item-title">Description: </b><span class="desc"></span>
+                </div>
+                <div class="element">
+                    <b class="item-title">Due date: </b><span class="date"></span>
+                </div>
+                <div class="element">
+                    <b class="item-title">Remaining days: </b><span class="rem-days"></span>
+                </div>
+                <div class="element completed">
+                    <img src="images/bxs-check-circle.svg" class="completed"><span class="completed">Completed</span>
+                </div>
+                <div class="element delete">
+                    <img src="images/bxs-trash.svg" alt="" class="delete"><span class="delete">Delete</span>
+                </div>
+            </li>
+          </template>
+    </ul>
+
+    <div class="error-container"></div>
+    
+    <template class="template-error">
+        <h2 class="error-title"></h2>
+        <p class="error-text"></p>
+    </template>
+
+
+    <script src="index.js"></script>
+</body>
+</html>

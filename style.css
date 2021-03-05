@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    background-color: #3498db;
+    color: #fff;
+}
+
+.title {
+    margin-top: 20px;
+    font-size: 2.5em;
+}
+
+.title, .form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    min-height: 10vh;
+    max-width: 75%;
+    margin: 1em auto 1em auto;
+}
+
+.form label {
+    font-size: 1.2rem;
+    letter-spacing: 0.3px;
+}
+
+.form input {
+    margin: 0 2em 0 1em;
+    height: 2.2rem;
+    width: 10rem;
+    border: none;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.submit {
+    height: 40px;
+    cursor: pointer;
+}
+
+.todo-list {
+    padding: 10px;
+    width: 75%;
+    margin: auto;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: none;
+}
+
+.list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr) repeat(2, 0.7fr);
+    gap: 10px;
+    padding: 10px;
+}
+
+.list:hover {
+    background-color: rgba(52, 152, 219, 0.3);
+}
+
+.list:hover > * {
+    cursor: pointer;
+    border: 2px solid black;
+}
+
+.element {
+    font-size: 15px;
+    display: flex;
+    height: 3rem;
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+    background-color: #fff;
+    overflow-x: auto;
+    align-self: center;
+    align-items: center;
+    box-shadow: 3px 2px rgba(0, 0, 0, 0.3);
+    color: #000;
+    cursor: auto;
+    animation: new-animation .3s linear forwards;
+}
+
+@keyframes new-animation {
+    from {
+        transform: translateY(-400px);
+    }
+    to {
+        transform : translateY(0);
+    }
+}
+
+.item-title + span {
+    text-transform: capitalize;
+    margin-left: 5px;
+}
+
+.element img {
+    height: 20px;
+    margin-right: 5px;
+}
+
+.element:is(.completed, .delete) {
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.fade {
+    animation: removed-item-animation 1s cubic-bezier(0.55, -0.04, 0.91, 0.94) forwards;
+    transform-origin: 0% 100%;
+}
+ 
+@keyframes removed-item-animation {
+    0% {
+        opacity: 1;
+        transform: rotateZ(0);
+}
+ 
+    100% {
+        opacity: 0;
+        transform: translateY(600px) rotateZ(90deg);
+    }
+}
+
+.error-container {
+    width: 20%;
+    height: 7rem;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000;
+    border: 2px solid #ff0000;
+    position: absolute;
+    top: 10rem;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    display: none;
+}
+
+.error-title {
+    margin-bottom: 15px;
+    border-bottom: 2px solid #000;
+}
